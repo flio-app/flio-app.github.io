@@ -1,0 +1,118 @@
+@font-face{font-family:"Outfit";font-weight:500;font-style:normal;font-display:swap;src:url("fonts/Outfit-Medium.ttf") format("truetype")}
+/* Trang chủ flio.io.vn. Dùng các biến màu của style.css (tự đổi theo chế độ sáng/tối) */
+html{scroll-behavior:smooth}
+html[lang="vi"] .en,html[lang="en"] .vi{display:none}
+body.home{line-height:1.6}
+.home a{color:inherit}
+.home h1,.home h2,.home h3{color:var(--text);letter-spacing:-.02em}
+.home p,.home li{color:var(--muted)}
+
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1080px;margin:0 auto;padding:18px 24px}
+.bar .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.bar .brand img{height:30px;width:auto;display:block}
+.brandName{font-family:"Outfit",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:500;font-size:30px;line-height:1;color:var(--text);letter-spacing:0}
+.bar nav{display:flex;align-items:center;gap:6px 22px;font-size:14px}
+.bar nav a{color:var(--muted);text-decoration:none}
+.bar nav a:hover{color:var(--text)}
+.langBtn{font:inherit;font-size:13px;color:var(--text);background:none;border:1px solid var(--line);border-radius:26px;padding:5px 14px;cursor:pointer}
+.langBtn:hover{border-color:var(--accent)}
+
+.landing-hero{display:flex;align-items:center;justify-content:space-between;gap:48px;max-width:1080px;margin:0 auto;padding:24px 24px 56px;text-align:left}
+.heroText{flex:1 1 0;min-width:0}
+.landing-hero h1{font-size:clamp(36px,5vw,56px);line-height:1.08;margin:0 0 20px;font-weight:700}
+.lead{font-size:18px;max-width:30em;margin:0 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:26px;border:1px solid var(--line);color:var(--text);text-decoration:none;font-size:15px;font-weight:600;background:transparent}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.disabled{opacity:.55;cursor:default;pointer-events:none}
+.note{font-size:14px;margin:16px 0 0}
+
+.phone{--w:300px;position:relative;margin:0;flex:0 0 auto;width:var(--w);padding:calc(var(--w)*.032);border-radius:calc(var(--w)*.17);background:#0b0b0e;border:1px solid #2c2c33;box-shadow:0 18px 50px rgba(20,16,40,.18),inset 0 0 0 calc(var(--w)*.006) #1c1c22}
+.phone img{display:block;width:100%;height:auto;border-radius:calc(var(--w)*.138)}
+.phone::before{content:"";position:absolute;z-index:1;top:calc(var(--w)*.062);left:50%;width:calc(var(--w)*.29);height:calc(var(--w)*.085);transform:translateX(-50%);border-radius:99px;background:#000}
+.landing-hero .phone{--w:min(300px,34vw,calc((100vh - 150px)/2.2))}
+
+.block{max-width:1080px;margin:0 auto;padding:72px 24px;border-top:1px solid var(--line)}
+.block.narrow{max-width:760px}
+.block h2{font-size:clamp(28px,3.6vw,38px);line-height:1.15;margin:0 0 14px;font-weight:700}
+.center{text-align:center}
+
+.row{display:flex;align-items:center;justify-content:space-between;gap:56px;margin:0 0 72px}
+.row:last-child{margin-bottom:0}
+.row.flip{flex-direction:row-reverse}
+.rowText{flex:1 1 0;min-width:0;max-width:30em}
+.rowText p{font-size:17px;margin:0}
+.row .phone{--w:min(300px,34vw)}
+
+.also{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding:0;margin:72px 0 0}
+.also li{border:1px solid var(--line);border-radius:26px;padding:22px 24px;font-size:15px;margin:0}
+.also strong{display:block;color:var(--text);font-size:16px;margin-bottom:6px}
+
+.plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;max-width:760px;margin:36px auto 0}
+.plan{border:1px solid var(--line);border-radius:26px;padding:28px}
+.plan.pro{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+.plan h3{margin:0 0 6px;font-size:20px}
+.price{font-size:32px;font-weight:700;color:var(--text)!important;margin:0}
+.price small{font-size:15px;font-weight:500;color:var(--muted)}
+.sub{font-size:14px;margin:2px 0 0}
+.plan ul{list-style:none;padding:0;margin:20px 0 0}
+.plan li{position:relative;padding-left:24px;margin:10px 0;font-size:15px}
+.plan li::before{content:"";position:absolute;left:2px;top:.55em;width:10px;height:6px;border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg)}
+.trial{margin:20px 0 0;font-size:14px;color:var(--accent)!important;font-weight:600}
+.fine{max-width:760px;margin:20px auto 0;text-align:center;font-size:13px}
+
+details{border-bottom:1px solid var(--line);padding:4px 0}
+summary{cursor:pointer;list-style:none;padding:16px 28px 16px 0;font-size:17px;font-weight:600;color:var(--text);position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:50%;transform:translateY(-50%);font-size:22px;font-weight:400;color:var(--muted)}
+details[open] summary::after{content:"–"}
+details p{margin:0 0 16px;font-size:16px}
+details a{color:var(--accent)}
+
+.foot{max-width:1080px;margin:0 auto;padding:36px 24px 48px;border-top:1px solid var(--line);text-align:center;font-size:13px;color:var(--muted)}
+.footLinks{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;margin-bottom:12px}
+.footLinks a{color:var(--muted);text-decoration:none}
+.footLinks a:hover{color:var(--text)}
+.foot p{margin:0}
+
+@media (max-width:820px){
+  .landing-hero{flex-direction:column;text-align:center;padding:28px 20px 56px;gap:36px}
+  .landing-hero .lead{margin-left:auto;margin-right:auto}
+  .cta{justify-content:center}
+  .landing-hero .phone{--w:min(280px,68vw)}
+  .block{padding:56px 20px}
+  .row,.row.flip{flex-direction:column;text-align:center;gap:32px;margin-bottom:56px}
+  .row .phone{--w:min(280px,66vw)}
+  .plans,.also{grid-template-columns:1fr}
+  .also{margin-top:48px}
+  .bar{padding:14px 20px}
+  .bar nav{gap:6px 14px}
+}
+@media (max-width:520px){
+  .bar nav a:not(.brand){display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Chữ gradient (hai màu thương hiệu, giống ảnh App Store) */
+.grad{background:linear-gradient(90deg,#EC4899,#6137BE);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+@media (prefers-color-scheme:dark){.grad{background-image:linear-gradient(90deg,#F472B6,#8B5CF6)}}
+.rowText{max-width:none}
+.rowText h2{white-space:nowrap;font-size:clamp(26px,3.2vw,36px)}
+.rowText p{max-width:28em}
+.row+.also{margin-top:0}
+@media (max-width:820px){.rowText h2{white-space:normal}.rowText p{margin-left:auto;margin-right:auto}}
+
+/* Khối bản web: ảnh chụp tràn hết bề ngang, đầu ảnh mờ dần vào nền để chữ và nút nằm đè lên */
+.webFull{background:#0e0b19;border-top:0;overflow:hidden}
+.webOverlay{position:relative;z-index:2;text-align:center;padding:clamp(28px,3.4vw,52px) 24px 0;margin-bottom:calc(-1 * clamp(32px,5vw,76px))}
+.webOverlay h2{color:#fff;font-size:clamp(30px,4.2vw,48px);line-height:1.12;margin:0 0 10px;font-weight:700}
+.webOverlay p{color:#cfcbe6;font-size:clamp(16px,1.5vw,18px);max-width:34em;margin:0 auto 18px}
+.webOverlay .webLead{max-width:none;white-space:nowrap}
+.webShot{margin:0}
+.webShot img{display:block;width:100%;height:auto;-webkit-mask-image:linear-gradient(to bottom,transparent 0,rgba(0,0,0,.5) 12%,#000 30%,#000 88%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,rgba(0,0,0,.5) 12%,#000 30%,#000 88%,transparent 100%)}
+@media (max-width:820px){
+  .webOverlay{padding:40px 20px 0;margin-bottom:-24px}
+  .webOverlay .webLead{white-space:normal}
+}
+@media (max-width:1000px){.webOverlay .webLead{white-space:normal}}

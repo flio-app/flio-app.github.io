@@ -1,26 +1,168 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Flio</title>
+<title>Flio — Ghi thu chi trong vài giây</title>
+<meta name="description" content="Flio là ứng dụng ghi chép thu chi cá nhân: gõ hoặc nói một câu, AI tự nhận số tiền, danh mục và ví. Quản lý ví, thẻ tín dụng và vay nợ. · Flio is a simple personal expense tracker with AI entry.">
+<link rel="canonical" href="https://flio.io.vn/">
 <link rel="icon" href="assets/flio-icon.png">
+<meta property="og:title" content="Flio">
+<meta property="og:description" content="Ghi thu chi trong vài giây · Log your spending in seconds">
+<meta property="og:image" content="https://flio.io.vn/assets/flio-icon.png">
+<meta property="og:url" content="https://flio.io.vn/">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/home.css">
+<script>
+// Ngôn ngữ: theo lựa chọn đã lưu, nếu chưa có thì theo trình duyệt (tiếng Việt, còn lại tiếng Anh)
+(function () {
+  var lang = 'vi';
+  try {
+    lang = localStorage.getItem('flio-lang') || (/^vi/i.test(navigator.language || '') ? 'vi' : 'en');
+  } catch (e) {
+    lang = /^vi/i.test(navigator.language || '') ? 'vi' : 'en';
+  }
+  document.documentElement.lang = lang;
+})();
+</script>
 </head>
-<body>
-<main>
-  <section class="hero">
-    <img src="assets/flio-icon.png" alt="Flio">
-    <p>Flio is a simple personal income and expense tracker. Flio là ứng dụng ghi chép thu chi cá nhân đơn giản.</p>
-    <div class="links">
-      <a href="terms/">Terms</a>
-      <a href="privacy/">Privacy</a>
-      <a href="support/">Support</a>
-      <a href="terms/vi/">Điều khoản</a>
-      <a href="privacy/vi/">Quyền riêng tư</a>
+<body class="home">
+
+<header class="bar">
+  <a class="brand" href="./"><img src="assets/flio-icon.png" alt=""><span class="brandName">flio</span></a>
+  <nav>
+    <a href="#features"><span class="vi">Tính năng</span><span class="en">Features</span></a>
+    <a href="#web"><span class="vi">Bản web</span><span class="en">Web</span></a>
+    <a href="#pricing"><span class="vi">Gói dịch vụ</span><span class="en">Plans</span></a>
+    <a href="#faq"><span class="vi">Hỏi đáp</span><span class="en">FAQ</span></a>
+    <button class="langBtn" type="button" id="langBtn" aria-label="Language"><span class="vi">EN</span><span class="en">VI</span></button>
+  </nav>
+</header>
+
+<section class="landing-hero">
+  <div class="heroText">
+    <h1><span class="vi">Tiền vào, tiền ra.<br><span class="grad">Một dòng chảy.</span></span><span class="en">Money in, money out.<br><span class="grad">One flow.</span></span></h1>
+    <p class="lead">
+      <span class="vi">Thu, chi, ví, thẻ tín dụng và vay nợ cùng chảy về một nơi, rõ ràng và dễ theo dõi. Gõ hoặc nói một câu, phần còn lại để Flio lo.</span>
+      <span class="en">Income, spending, wallets, cards and loans, all flowing into one clear place. Type or say one sentence and Flio handles the rest.</span>
+    </p>
+    <div class="cta">
+      <!-- Khi App Store duyệt xong: đổi thẻ span này thành <a class="btn primary" href="LINK_APP_STORE"> và bỏ class disabled -->
+      <span class="btn primary disabled" aria-disabled="true"><span class="vi">Sắp có trên App Store</span><span class="en">Coming soon to the App Store</span></span>
+      <a class="btn" href="https://app.flio.io.vn"><span class="vi">Dùng bản web</span><span class="en">Open web app</span></a>
     </div>
-  </section>
-</main>
-<footer>© Flio · <a href="mailto:cong.mimo@gmail.com">cong.mimo@gmail.com</a></footer>
+    <p class="note"><span class="vi">Tài khoản mới được dùng thử Pro 7 ngày, không cần thẻ.</span><span class="en">New accounts get a 7-day Pro trial, no card required.</span></p>
+  </div>
+  <figure class="phone"><img src="assets/landing/phone-overview.jpg" alt="" width="360" height="782"></figure>
+</section>
+
+<section class="block" id="features">
+  <div class="row">
+    <div class="rowText">
+      <h2><span class="vi">Nói một câu, <span class="grad">ghi nhiều khoản</span></span><span class="en">Say it. <span class="grad">Flio logs it.</span></span></h2>
+      <p>
+        <span class="vi">Gõ hoặc nói tự nhiên, AI tự nhận số tiền, danh mục và ví. Bạn xem lại rồi mới lưu.</span>
+        <span class="en">Type or speak naturally. AI picks up the amount, category and wallet. You review before saving.</span>
+      </p>
+    </div>
+    <figure class="phone"><img src="assets/landing/phone-chat.jpg" alt="" loading="lazy" width="320" height="696"></figure>
+  </div>
+
+  <div class="row flip">
+    <div class="rowText">
+      <h2><span class="vi">Một nơi cho <span class="grad">mọi nguồn tiền</span></span><span class="en">All your money <span class="grad">in one place</span></span></h2>
+      <p>
+        <span class="vi">Ví, thẻ tín dụng và khoản vay nợ, số dư luôn rõ ràng.</span>
+        <span class="en">Wallets, credit cards and loans, each with a clear balance.</span>
+      </p>
+    </div>
+    <figure class="phone"><img src="assets/landing/phone-assets.jpg" alt="" loading="lazy" width="320" height="696"></figure>
+  </div>
+
+  <ul class="also">
+    <li><strong><span class="vi">Tổng quan theo tháng</span><span class="en">Monthly overview</span></strong><span class="vi">Tổng thu, tổng chi, chênh lệch và lịch chi tiêu từng ngày.</span><span class="en">Income, spending, balance and a daily spending calendar.</span></li>
+    <li><strong><span class="vi">Chuyển từ app khác</span><span class="en">Switch from another app</span></strong><span class="vi">Nhập sao kê ngân hàng (CSV, Excel), tự bỏ qua dòng đã nhập.</span><span class="en">Import bank statements (CSV, Excel); rows already imported are skipped.</span></li>
+    <li><strong><span class="vi">Của riêng bạn</span><span class="en">Made your way</span></strong><span class="vi">Giao diện sáng, tối, nhiều màu nhấn, 6 ngôn ngữ.</span><span class="en">Light and dark themes, accent colors, 6 languages.</span></li>
+  </ul>
+</section>
+
+<section class="webFull" id="web">
+  <div class="webOverlay">
+    <h2><span class="vi">Flio trên máy tính</span><span class="en">Flio on your computer</span></h2>
+    <p class="webLead"><span class="vi">Đầy đủ tính năng trên trình duyệt của máy tính và máy tính bảng, dữ liệu đồng bộ với điện thoại</span><span class="en">Every feature in the browser on your computer or tablet, synced with your phone</span></p>
+    <p><a class="btn primary" href="https://app.flio.io.vn"><span class="vi">Mở bản web</span><span class="en">Open web app</span></a></p>
+  </div>
+  <figure class="webShot"><img src="assets/landing/web-overview.jpg" alt="" loading="lazy" width="2454" height="1262"></figure>
+</section>
+
+<section class="block" id="pricing">
+  <h2 class="center"><span class="vi">Miễn phí đủ để ghi chép hằng ngày</span><span class="en">Free is enough for everyday tracking</span></h2>
+  <div class="plans">
+    <article class="plan">
+      <h3>Free</h3>
+      <p class="price"><span class="vi">0₫</span><span class="en">Free</span></p>
+      <ul>
+        <li><span class="vi">Ghi giao dịch không giới hạn</span><span class="en">Unlimited transactions</span></li>
+        <li><span class="vi">2 ví tiền, 1 thẻ tín dụng, vay nợ không giới hạn</span><span class="en">2 cash wallets, 1 credit card, unlimited debts</span></li>
+        <li><span class="vi">Xem lịch sử 6 tháng gần nhất</span><span class="en">Last 6 months of history</span></li>
+        <li><span class="vi">3 lượt nhập bằng AI mỗi ngày</span><span class="en">3 AI entries per day</span></li>
+      </ul>
+    </article>
+    <article class="plan pro">
+      <h3>Pro</h3>
+      <p class="price"><span class="vi">39.000₫<small>/tháng</small></span><span class="en">39,000₫<small>/month</small></span></p>
+      <p class="sub"><span class="vi">hoặc 299.000₫/năm, tiết kiệm 36%</span><span class="en">or 299,000₫/year, save 36%</span></p>
+      <ul>
+        <li><span class="vi">Không giới hạn số ví và thẻ</span><span class="en">Unlimited wallets and cards</span></li>
+        <li><span class="vi">Xem toàn bộ lịch sử giao dịch</span><span class="en">Your full transaction history</span></li>
+        <li><span class="vi">Nhiều lượt nhập bằng AI mỗi ngày</span><span class="en">Many more AI entries every day</span></li>
+        <li><span class="vi">Xuất dữ liệu ra tệp</span><span class="en">Export your data</span></li>
+        <li><span class="vi">Ảnh ví, màu thẻ và giao diện cá nhân hoá</span><span class="en">Wallet photos, card colors and personal themes</span></li>
+        <li><span class="vi">Bản web trên máy tính</span><span class="en">Web app on your computer</span></li>
+      </ul>
+      <p class="trial"><span class="vi">Dùng thử 7 ngày, không cần thẻ</span><span class="en">7-day free trial, no card required</span></p>
+    </article>
+  </div>
+  <p class="fine"><span class="vi">Pro là gói tự động gia hạn theo tháng hoặc năm, hủy bất cứ lúc nào trong cài đặt tài khoản App Store của bạn.</span><span class="en">Pro is an auto-renewing monthly or yearly subscription. Cancel any time in your App Store account settings.</span></p>
+</section>
+
+<section class="block narrow" id="faq">
+  <h2 class="center"><span class="vi">Câu hỏi thường gặp</span><span class="en">Frequently asked questions</span></h2>
+  <details>
+    <summary><span class="vi">Dữ liệu của tôi có an toàn không?</span><span class="en">Is my data safe?</span></summary>
+    <p><span class="vi">Flio không có quảng cáo và không bán dữ liệu của bạn. Bạn có thể xoá dữ liệu hoặc xoá tài khoản bất cứ lúc nào ngay trong app. Chi tiết ở <a href="privacy/vi/">Chính sách quyền riêng tư</a>.</span><span class="en">Flio has no ads and never sells your data. You can delete your data or your account any time in the app. See the <a href="privacy/">Privacy Policy</a>.</span></p>
+  </details>
+  <details>
+    <summary><span class="vi">Có cần tạo tài khoản không?</span><span class="en">Do I need an account?</span></summary>
+    <p><span class="vi">Bạn dùng thử được ngay không cần đăng ký, hoặc đăng nhập bằng Apple hoặc Google. Đăng nhập thì dữ liệu được giữ khi đổi máy và bạn nhận được 7 ngày dùng thử Pro.</span><span class="en">You can try it right away without signing up, or sign in with Apple or Google. Signing in keeps your data when you switch phones and gives you a 7-day Pro trial.</span></p>
+  </details>
+  <details>
+    <summary><span class="vi">Bản web dùng thế nào?</span><span class="en">How does the web app work?</span></summary>
+    <p><span class="vi">Mở app.flio.io.vn trên máy tính hoặc máy tính bảng và đăng nhập bằng cùng tài khoản. Bản web dành cho gói Pro và chưa hỗ trợ trình duyệt trên điện thoại, hãy dùng app.</span><span class="en">Open app.flio.io.vn on a computer or tablet and sign in with the same account. The web app is part of Pro and isn’t available in phone browsers; use the app there.</span></p>
+  </details>
+  <details>
+    <summary><span class="vi">Tôi chuyển từ app khác sang được không?</span><span class="en">Can I switch from another app?</span></summary>
+    <p><span class="vi">Được. Flio nhập sao kê ngân hàng (CSV, Excel) hoặc tệp xuất từ các app chi tiêu khác, đối soát số liệu và bỏ qua các dòng đã nhập nên nhập lại không bị trùng.</span><span class="en">Yes. Flio imports bank statements (CSV, Excel) or files exported from other expense apps, reconciles the numbers and skips rows you already imported.</span></p>
+  </details>
+  <details>
+    <summary><span class="vi">Hủy gói Pro thế nào?</span><span class="en">How do I cancel Pro?</span></summary>
+    <p><span class="vi">Vào Cài đặt của iPhone, chọn tên của bạn, rồi Đăng ký, chọn Flio và huỷ. Dữ liệu của bạn không bị xoá khi hết gói.</span><span class="en">Open Settings on your iPhone, tap your name, then Subscriptions, pick Flio and cancel. Your data isn’t deleted when the plan ends.</span></p>
+  </details>
+</section>
+
+<footer class="foot">
+  <div class="footLinks">
+    <a href="terms/vi/">Điều khoản</a><a href="privacy/vi/">Quyền riêng tư</a><a href="terms/">Terms</a><a href="privacy/">Privacy</a><a href="support/">Support · Hỗ trợ</a>
+  </div>
+  <p>© Flio · <a href="mailto:cong.mimo@gmail.com">cong.mimo@gmail.com</a></p>
+</footer>
+
+<script>
+document.getElementById('langBtn').addEventListener('click', function () {
+  var next = document.documentElement.lang === 'vi' ? 'en' : 'vi';
+  document.documentElement.lang = next;
+  try { localStorage.setItem('flio-lang', next); } catch (e) {}
+});
+</script>
 </body>
 </html>
